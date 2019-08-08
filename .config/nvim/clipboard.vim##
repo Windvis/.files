@@ -1,0 +1,3 @@
+" Linux
+noremap <leader>y "+y
+noremap <leader>p "+p

@@ -46,13 +46,6 @@ set autoindent
 " set list
 " set listchars=eol:¬,tab:>·,extends:>,precedes:<,space:·
 
-" Copy from / to the system clipboard
-" macOs
-noremap <leader>y "*y
-noremap <leader>p "*p
-" Linux
-noremap <leader>Y "+y
-noremap <leader>P "+p
 
 " Auto reload unchanged buffers when the file changes on disk.
 " Src: https://unix.stackexchange.com/a/383044
@@ -60,3 +53,5 @@ set autoread
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
+source ~/.config/nvim/clipboard.vim
