@@ -12,6 +12,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
   Plug 'sgur/vim-editorconfig'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+  Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
@@ -55,3 +57,10 @@ autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 source ~/.config/nvim/clipboard.vim
+
+" Fuzzy finder mappings: https://www.reddit.com/r/vim/comments/cjsz2j/what_do_you_use_to_grep_through_entire/evgabqk
+nmap <leader>f :Files<cr>|     " fuzzy find files in the working directory (where you launched Vim from)
+nmap <leader>/ :BLines<cr>|    " fuzzy find lines in the current file
+nmap <leader>b :Buffers<cr>|   " fuzzy find an open buffer
+nmap <leader>r :Rg |           " fuzzy find text in the working directory
+nmap <leader>c :Commands<cr>|  " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
